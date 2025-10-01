@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelica Lee | ISU Master's of Space Studies '26</title>
+    <meta name="description" content="Angelica Lee, a Financial Analyst and ISU MSS '26 student focused on space tech commercialization, strategy, and life support systems.">
+    <meta name="author" content="Angelica Lee">
+
+    <meta property="og:title" content="Angelica Lee | ISU MSS '26">
+    <meta property="og:description" content="Financial analyst passionate about strategy, innovation, and the commercialization of sustainable space technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/smileyangelica/github-pages-repo-name">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        /* ISU-inspired Colors */
+        :root {
+            --isu-blue: #0b3d91; /* Dark Blue */
+            --isu-gold: #f0b429; /* Gold/Yellow */
+            --isu-ink: #0d1b2a; /* Near Black */
+            --isu-sky: #e6f1ff; /* Light Blue/Off-White */
+            --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            --base-font-size: 1.1rem; /* Low-Vision Support */
+        }
+
+        /* Base Styles and Low-Vision Support */
+        body {
+            font-size: var(--base-font-size);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* The main color scheme changes */
+        [data-bs-theme="light"] {
+            --bs-body-color: var(--isu-ink);
+            --bs-body-bg: var(--bs-white);
+            --bs-primary: var(--isu-blue);
+            --bs-secondary: #6c757d;
+            --bs-dark: var(--isu-ink);
+            --bs-light: var(--isu-sky);
+            --bs-link-color: var(--isu-blue);
+            --bs-heading-color: var(--isu-blue);
+            --isu-highlight: var(--isu-gold);
+        }
+
+        [data-bs-theme="dark"] {
+            --bs-body-color: var(--bs-white);
+            --bs-body-bg: var(--isu-ink);
+            --bs-primary: var(--isu-gold);
+            --bs-secondary: #adb5bd;
+            --bs-dark: var(--bs-white);
+            --bs-light: var(--isu-ink);
+            --bs-link-color: var(--isu-gold);
+            --bs-heading-color: var(--isu-gold);
+            --isu-highlight: var(--isu-blue);
+        }
+
+        /* Custom Component Styles */
+        .navbar-isu {
+            background-color: var(--isu-blue) !important;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-isu .nav-link,
+        .navbar-isu .navbar-brand {
+            color: var(--bs-white) !important;
+            transition: color 0.2s;
+        }
+        .navbar-isu .nav-link:hover {
+            color: var(--isu-gold) !important;
+        }
+        .hero-section {
+            background-color: var(--bs-body-bg);
+            padding-top: 8rem;
+            padding-bottom: 6rem;
+            min-height: 90vh;
+        }
+        .btn-primary {
+            --bs-btn-bg: var(--isu-blue);
+            --bs-btn-border-color: var(--isu-blue);
+            --bs-btn-hover-bg: var(--isu-gold);
+            --bs-btn-hover-border-color: var(--isu-gold);
+            --bs-btn-hover-color: var(--isu-ink);
+            --bs-btn-active-bg: var(--isu-ink);
+            --bs-btn-active-border-color: var(--isu-ink);
+            --bs-btn-active-color: var(--bs-white);
+        }
+
+        /* Dark mode button adjustments for contrast */
+        [data-bs-theme="dark"] .btn-primary {
+            --bs-btn-bg: var(--isu-gold);
+            --bs-btn-border-color: var(--isu-gold);
+            --bs-btn-color: var(--isu-ink);
+            --bs-btn-hover-bg: var(--isu-blue);
+            --bs-btn-hover-border-color: var(--isu-blue);
+            --bs-btn-hover-color: var(--bs-white);
+        }
+
+        .section-header {
+            color: var(--isu-highlight);
+            border-bottom: 3px solid var(--isu-highlight);
+            display: inline-block;
+            padding-bottom: 0.25rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Timeline Styles for Experience Section */
+        .timeline {
+            border-left: 3px solid var(--isu-blue);
+            padding-left: 2rem;
+            margin-left: 1rem;
+            position: relative;
+        }
+
+        [data-bs-theme="dark"] .timeline {
+            border-left: 3px solid var(--isu-gold);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.15rem;
+            top: 0.25rem;
+            width: 14px;
+            height: 14px;
+            background-color: var(--isu-blue);
+            border: 3px solid var(--bs-body-bg);
+            border-radius: 50%;
+        }
+
+        [data-bs-theme="dark"] .timeline-item::before {
+            background-color: var(--isu-gold);
+        }
+
+        /* Skip Link Styling */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--isu-gold);
+            color: var(--isu-ink);
+            padding: 8px;
+            z-index: 10000;
+            text-decoration: none;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            overflow: hidden;
+            height: 1px;
+            width: 1px;
+            white-space: nowrap;
+        }
+
+        .skip-link:focus {
+            clip: auto;
+            clip-path: none;
+            width: auto;
+            height: auto;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-isu" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">Angelica Lee</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cv">CV</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <button class="btn btn-outline-light btn-sm mt-2 mt-lg-0" id="themeToggle" aria-label="Toggle light and dark theme">
+                                <i class="bi bi-moon-fill"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero-section text-center">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="display-3 fw-bolder mb-3" style="color: var(--isu-blue);">Angelica Lee</h1>
+                        <p class="lead mb-4">Financial analyst passionate about strategy, innovation, and the commercialization of sustainable space technology.</p>
+                        <p class="text-muted small">Master's of Space Studies '26 (Space Policy & Entrepreneurship) | ISU, Strasbourg, France</p>
+
+                        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5">
+                            <a href="#projects" class="btn btn-primary btn-lg px-4 me-sm-3">
+                                <i class="bi bi-rocket-takeoff-fill me-2"></i> Projects
+                            </a>
+                            <a href="#cv" class="btn btn-secondary btn-lg px-4 me-sm-3">
+                                <i class="bi bi-file-earmark-person-fill me-2"></i> CV
+                            </a>
+                            <a href="#contact" class="btn btn-outline-secondary btn-lg px-4">
+                                <i class="bi bi-envelope-fill me-2"></i> Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-5 py-xl-8 border-top">
+            <div class="container">
+                <div class="row gy-4 gy-md-0 align-items-center">
+                    <div class="col-12 col-md-4 text-center">
+                        <img id="profileImage" src="angelicaleegithubprofile.jpg" class="img-fluid rounded-circle shadow-lg" alt="Professional headshot of Angelica Lee smiling, wearing glasses." style="max-width: 250px;">
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <h2 class="section-header mb-4">About Me</h2>
+                        <p>I am an ISU MSS '26 student focused on the intersection of finance, strategy, and space policy. My background as a **Financial Analyst Intern** at the Canadian Space Agency drives my passion for maximizing efficiency and finding commercially viable solutions for space technology.</p>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-4">
+                                <h3 class="h4 fw-bold" style="color: var(--isu-blue);">Focus</h3>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-lightbulb-fill me-2 text-warning"></i> Space Health</li>
+                                    <li><i class="bi bi-lightbulb-fill me-2 text-warning"></i> Life Support Systems</li>
+                                    <li><i class="bi bi-lightbulb-fill me-2 text-warning"></i> Earth Observation</li>
+                                    <li><i class="bi bi-lightbulb-fill me-2 text-warning"></i> Sustainability</li>
+                                    <li><i class="bi bi-lightbulb-fill me-2 text-warning"></i> Space Tech Commercialization for Earth uses</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <h3 class="h4 fw-bold" style="color: var(--isu-blue);">Tools & Skills</h3>
+                                <ul class="list-unstyled">
+                                    <li><i class="bi bi-tools me-2 text-warning"></i> Excel (Advanced)</li>
+                                    <li><i class="bi bi-tools me-2 text-warning"></i> Canva</li>
+                                    <li><i class="bi bi-tools me-2 text-warning"></i> MS Office Suite</li>
+                                    <li><i class="bi bi-tools me-2 text-warning"></i> SAP (Resume says advanced)</li>
+                                    <li><i class="bi bi-tools me-2 text-warning"></i> Tableau (Resume says full)</li>
+                                    <li><i class="bi bi-tools me-2 text-warning"></i> PowerBI (Resume says intermediate)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h3 class="h4 fw-bold mt-4" style="color: var(--isu-blue);">Global Perspective</h3>
+                        <p class="mb-1">**Languages:** English, French (Kebekois + standard dialect), Cantonese (conversational), American Sign Language (conversational), German (basic).</p>
+                        <p class="mb-0">**Interests:** Running, geocaching, escape rooms, smiling and helping in senior homes and community kitchens.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-5 py-xl-8 bg-light">
+            <div class="container">
+                <h2 class="section-header text-center mb-5">Selected Projects</h2>
+                <div class="row row-cols-1 row-cols-lg-3 g-4">
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold" style="color: var(--isu-blue);">Life Support Systems Solutions Course</h4>
+                                <p class="card-text text-muted small">ESA Academy, March 2025</p>
+                                <p class="card-text">**Goal:** Led the financial and technical feasibility assessment for a sustainable farming solution ideated by a cross-cultural, interdisciplinary team.</p>
+                                <ul class="list-unstyled pt-2 small">
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Tool/Data:** MELiSSA-based project research.</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Method:** Performed market research and partnership identification.</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Outcome:** Determined the proposed solution was not financially feasible for a startup at the current technical level.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold" style="color: var(--isu-blue);">Financial Terms Glossary Creation</h4>
+                                <p class="card-text text-muted small">Canadian Space Agency, Sep 2023 – Apr 2024</p>
+                                <p class="card-text">**Goal:** Created the first financial terms glossary for dashboard tools to bridge the understanding gap between technical and finance departments.</p>
+                                <ul class="list-unstyled pt-2 small">
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Tool/Data:** PowerBI Dashboard and MS Word.</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Method:** Designed and compiled glossary content for cross-departmental use.</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Outcome:** Improved cross-departmental efficiency; currently used in financial literacy training by over 60 managers.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <h4 class="card-title fw-bold" style="color: var(--isu-blue);">Cancer Coaching Program Campaign</h4>
+                                <p class="card-text text-muted small">NexJ Health, Sep – Dec 2022</p>
+                                <p class="card-text">**Goal:** Directed a cancer coaching program campaign, providing advice on email templates and social media messaging planning.</p>
+                                <ul class="list-unstyled pt-2 small">
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Tool/Data:** SendGrid and social media planning platforms.</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Method:** Advised on campaign messaging, email templates, and social media strategy.</li>
+                                    <li><i class="bi bi-check-circle-fill me-2 text-warning"></i> **Outcome:** Successfully directed the campaign, supporting the program's outreach and marketing.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-5 py-xl-8 border-top">
+            <div class="container">
+                <h2 class="section-header text-center mb-5">Professional Experience</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="timeline">
+
+                            <div class="timeline-item">
+                                <h4 class="h5 fw-bold mb-1">Financial Analyst Intern</h4>
+                                <p class="mb-0">Canadian Space Agency, St-Hubert, Québec</p>
+                                <span class="badge text-bg-secondary mb-2">Sep 2023 – Apr 2024</span>
+                                <p class="small">Maximized budgets by performing financial transactions for monthly reports and applying financial controls to reduce surpluses.</p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <h4 class="h5 fw-bold mb-1">Business Dev. and Marketing Coordinator Intern</h4>
+                                <p class="mb-0">NexJ Health, Toronto, Ontario</p>
+                                <span class="badge text-bg-secondary mb-2">Sep – Dec 2022</span>
+                                <p class="small">Defined expansion strategies by conducting 152 pages of market research, identifying new business opportunities.</p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <h4 class="h5 fw-bold mb-1">Project Manager (Volunteer)</h4>
+                                <p class="mb-0">ActinSpace Hackathon (National Event)</p>
+                                <span class="badge text-bg-secondary mb-2">2022</span>
+                                <p class="small">Managed the national hackathon event, coordinating teams and logistics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cv" class="py-5 py-xl-8 bg-light border-top">
+            <div class="container text-center">
+                <h2 class="section-header d-inline-block mb-4">View My Full CV</h2>
+
+                <div id="cvBtn" class="d-none">
+                    <a href="cv.pdf" target="_blank" class="btn btn-primary btn-lg shadow">
+                        <i class="bi bi-box-arrow-up-right me-2"></i> Open CV (PDF)
+                    </a>
+                </div>
+
+                <div id="cvNote" class="alert alert-warning border-0 shadow-sm" role="alert">
+                    <i class="bi bi-info-circle-fill me-2"></i> Note: Add <code class="small">cv.pdf</code> to the repository root to enable the CV button.
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-5 py-xl-8 border-top">
+            <div class="container">
+                <h2 class="section-header text-center mb-5">Connect with Angelica</h2>
+
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-6">
+                        <p class="lead mb-4">You can reach me via my professional network for inquiries related to space strategy, finance, or collaboration opportunities.</p>
+
+                        <div class="d-grid gap-3">
+                            <a href="https://www.linkedin.com/in/angelica-lee2025" target="_blank" class="btn btn-primary btn-lg shadow">
+                                <i class="bi bi-linkedin me-2"></i> Contact Me on LinkedIn
+                            </a>
+
+                            <a href="https://github.com/smileyangelica" target="_blank" class="btn btn-outline-secondary btn-lg shadow">
+                                <i class="bi bi-github me-2"></i> View My GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="edit-checklist" class="py-5 py-xl-8 bg-light border-top">
+            <div class="container">
+                <h2 class="section-header d-inline-block mb-4">Site Edit Checklist</h2>
+                <p class="lead">Simple to-dos to finalize your site content.</p>
+                <ul class="list-group shadow-sm">
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill me-2 text-success"></i> Replace the social media image placeholder in the `<head>`.</li>
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill me-2 text-success"></i> Upload `angelicaleegithubprofile.jpg` and `cv.pdf` to your GitHub repository root.</li>
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill me-2 text-success"></i> Edit the **Goal & Result** section text in the project cards to feel more personal.</li>
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill me-2 text-success"></i> Update your ISU program year and degree details as they change.</li>
+                    <li class="list-group-item"><i class="bi bi-check-circle-fill me-2 text-success"></i> Review and update the `<meta property="og:url">` tag.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-4 text-white" style="background-color: var(--isu-ink);">
+        <div class="container">
+            <p class="mb-1 small">
+                &copy; <span id="year"></span> Angelica Lee. Unofficial student page.
+            </p>
+            <p class="mb-0 small text-muted">
+                'International Space University' named here for study use only.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Set the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // --- Theme Toggle Logic (Saves to localStorage) ---
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const htmlElement = document.documentElement;
+
+        // Function to set the theme
+        function setTheme(theme) {
+            htmlElement.setAttribute('data-bs-theme', theme);
+            localStorage.setItem('theme', theme);
+            // Update icon
+            if (theme === 'dark') {
+                themeIcon.classList.remove('bi-moon-fill');
+                themeIcon.classList.add('bi-sun-fill');
+            } else {
+                themeIcon.classList.remove('bi-sun-fill');
+                themeIcon.classList.add('bi-moon-fill');
+            }
+        }
+
+        // Check for saved preference or OS preference on load
+        const storedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else if (prefersDark) {
+            setTheme('dark');
+        } else {
+            // Default is 'light' as per user request
+            setTheme('light');
+        }
+
+        // Toggle handler
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+
+
+        // --- CV Check Logic (HEAD fetch) ---
+        function checkCV() {
+            const cvBtn = document.getElementById('cvBtn');
+            const cvNote = document.getElementById('cvNote');
+            const cvUrl = 'cv.pdf';
+
+            // Use fetch with 'HEAD' method to check for file existence
+            // This is safer than a full GET request and fast, but can be blocked by CORS
+            fetch(cvUrl, { method: 'HEAD' })
+                .then(response => {
+                    // Check if the response status is 200 (OK)
+                    if (response.ok) {
+                        cvBtn.classList.remove('d-none');
+                        cvNote.classList.add('d-none');
+                    } else {
+                        // Status is not OK (e.g., 404 Not Found)
+                        cvBtn.classList.add('d-none');
+                        cvNote.classList.remove('d-none');
+                    }
+                })
+                .catch(error => {
+                    // Fail silently if fetch is blocked or fails
+                    console.warn("CV check failed silently. Ensure cv.pdf is accessible.", error);
+                    cvBtn.classList.add('d-none');
+                    cvNote.classList.remove('d-none');
+                });
+        }
+        document.addEventListener('DOMContentLoaded', checkCV);
+
+
+        // --- Smooth Scrolling for Navigation (Respects reduced motion) ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            if (anchor.getAttribute('href') !== '#' && anchor.getAttribute('href') !== '#main') {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                        
+                        targetElement.scrollIntoView({
+                            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Update URL hash without scroll for better navigation
+                        if(targetId !== '#main') {
+                            window.history.pushState(null, null, targetId);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
